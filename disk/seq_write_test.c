@@ -6,7 +6,7 @@
 #include <string.h>
 
 #define BUFFER_SIZE 4096
-#define BILLION 1000000000L
+#include "getTimeDiff.c"
 
 uint64_t time_diff(struct timespec start, struct timespec end)
 {
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 		}
 		fsync(fd);
 		clock_gettime(CLOCK_REALTIME, &end);
-		diff = time_diff(start, end);
+		diff = getTimeDiff(start, end);
 		printf("Time for write of %s, %d bytes - %llu\n", filename, total_written, (long long unsigned int)diff);
 		close(fd);
 	}

@@ -6,7 +6,7 @@
 #include <string.h>
 
 #define BUFFER_SIZE 4096
-#define BILLION 1000000000L
+#include "getTimeDiff.c"
 
 uint64_t time_diff(struct timespec start, struct timespec end)
 {
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 			times++;
 		}
 		clock_gettime(CLOCK_REALTIME, &end);
-		diff = time_diff(start, end);
+		diff = getTimeDiff(start, end);
 		printf("Time for read of %d bytes from %s - %llu\n", total_read, filename, (long long unsigned int)diff);
 		//system("echo 3 | sudo tee /proc/sys/vm/drop_caches");
 		system("sudo sh -c \"sync; echo 3 > /proc/sys/vm/drop_caches\"");

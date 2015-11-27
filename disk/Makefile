@@ -1,4 +1,4 @@
-all:	seq_read	seq_write
+all:	seq_read	seq_write	rnd_read	rnd_write
 
 seq_read:	seq_read_test.c
 	gcc seq_read_test.c -o seq_read
