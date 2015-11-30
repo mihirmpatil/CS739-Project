@@ -15,9 +15,10 @@ uint64_t time_diff(struct timespec start, struct timespec end)
 
 int main(int argc, char *argv[])
 {
-	if(argc != 2)
+	if(argc != 3)
 	{
-		printf("Usage: binary filename\n");
+		printf("Usage: binary filename filesize\n");
+		exit(1);
 	}
 	uint64_t diff;
 	struct timespec start, end;
@@ -30,7 +31,8 @@ int main(int argc, char *argv[])
 		buffer[i] = 'a';
 	buffer[BUFFER_SIZE] = '\0';
 	int fd, total_written=0, num_written=0, times=0;
- 	int file_size=100*1024;											// This will be multiplied by BUFFER_SIZE
+ 	//int file_size=100*1024;											// This will be multiplied by BUFFER_SIZE
+	int file_size = atoi(argv[2]);
 	int k, iterations = 10;
 
 	for(k=0; k<iterations; k++)
