@@ -44,7 +44,8 @@ int main(int argc, char *argv[])
 		}
 		clock_gettime(CLOCK_REALTIME, &end);
 		diff = getTimeDiff(start, end);
-		printf("Time for read of %d bytes from %s - %llu\n", total_read, filename, (long long unsigned int)diff);
+		printf("Total bytes read %d\n", total_read);
+		printf("%llu\n", (long long unsigned int)diff);
 		//system("echo 3 | sudo tee /proc/sys/vm/drop_caches");
 		system("sudo sh -c \"sync; echo 3 > /proc/sys/vm/drop_caches\"");
 	}
