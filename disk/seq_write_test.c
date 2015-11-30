@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 		fsync(fd);
 		clock_gettime(CLOCK_REALTIME, &end);
 		diff = getTimeDiff(start, end);
-		printf("Total bytes written %d", total_written);
+		printf("Total bytes written %d\t", total_written);
 		//printf("Time for write of %s, %d bytes - %llu\n", filename, total_written, (long long unsigned int)diff);
 		printf("%llu\n", (long long unsigned int)diff);
 		close(fd);

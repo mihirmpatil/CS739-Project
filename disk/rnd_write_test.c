@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 		clock_gettime(CLOCK_REALTIME, &end);
 		times++;
 		diff = getTimeDiff(start, end);
-		printf("Random write performed %d times on %s\n", times, filename);
+		printf("Random write performed %d times on %s\t", times, filename);
 		printf("%llu\n", (long long unsigned int)diff);
 		//system("sudo sh -c \"sync; echo 3 > /proc/sys/vm/drop_caches\"");
 	}
