@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
 		//printf("Time for write of %s, %d bytes - %llu\n", filename, total_written, (long long unsigned int)diff);
 		printf("%llu\n", (long long unsigned int)diff);
 		close(fd);
+		system("sudo sh -c \"sync; echo 3 > /proc/sys/vm/drop_caches\"");
 	}
 	return 0;
 }
