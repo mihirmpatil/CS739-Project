@@ -15,9 +15,9 @@ uint64_t time_diff(struct timespec start, struct timespec end)
 
 int main(int argc, char *argv[])
 {
-	if(argc != 2)
+	if(argc != 3)
 	{
-		printf("Usage: binary filename\n");
+		printf("Usage: binary filename reads\n");
 		exit(1);
 	}
 	srand(time(NULL));
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	int sz = lseek(fd, 0L, SEEK_END);
 	lseek(fd, 0L, SEEK_SET);
 	char buffer[BUFFER_SIZE];
-	int k, num_reads=20;
+	int k, num_reads=atoi(argv[2]);
 
 	int i, iterations = 10;
 	int times, random_num;
