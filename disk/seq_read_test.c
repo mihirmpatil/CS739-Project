@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 	int fd = open(filename, O_RDONLY);
 	char buffer[BUFFER_SIZE];
-	int total_read=0, num_read=0, times=0;
+	long int total_read=0, num_read=0, times=0;
 
 	int i, iterations = 10;
 
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		}
 		clock_gettime(CLOCK_REALTIME, &end);
 		diff = getTimeDiff(start, end);
-		printf("Total bytes read %d\t", total_read);
+		printf("Total bytes read %ld\t", total_read);
 		printf("%llu\n", (long long unsigned int)diff);
 		//system("echo 3 | sudo tee /proc/sys/vm/drop_caches");
 		//system("sudo sh -c \"sync; echo 3 > /proc/sys/vm/drop_caches\"");
