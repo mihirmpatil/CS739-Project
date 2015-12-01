@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 		printf("Total bytes read %d\t", total_read);
 		printf("%llu\n", (long long unsigned int)diff);
 		//system("echo 3 | sudo tee /proc/sys/vm/drop_caches");
-		system("sudo sh -c \"sync; echo 3 > /proc/sys/vm/drop_caches\"");
+		//system("sudo sh -c \"sync; echo 3 > /proc/sys/vm/drop_caches\"");
 	}
 	return 0;
 }
