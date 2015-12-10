@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	int fd, total_written=0, num_written=0, times=0;
  	//int file_size=100*1024;											// This will be multiplied by BUFFER_SIZE
 	int file_size = atoi(argv[2]);
-	int k, iterations = 10;
+	int k, iterations = 5;
 
 	for(k=0; k<iterations; k++)
 	{
