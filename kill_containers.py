@@ -18,6 +18,7 @@ def kill_single_container(container_name):
 def kill_all_containers():
 	running = get_running_containers()
 	for item in running:
+		print item
 		kill_single_container(item)
 
 
