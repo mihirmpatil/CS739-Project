@@ -34,7 +34,7 @@ uint64_t getTimeDiff(struct timespec start,struct timespec end)
 void* allocAndRead(void *args){
 
   char *mem;
-  int i,j,temp;
+  unsigned long long int i,j,temp;
   uint64_t diff;
   struct timespec start, end;
 
@@ -79,7 +79,7 @@ void* allocAndRead(void *args){
 void* allocAndWrite(void *args){
 
   char *mem;
-  int i,j,temp = 0,rno;
+  unsigned long long int i,j,temp = 0,rno;
   uint64_t diff;
   struct timespec start, end;
   

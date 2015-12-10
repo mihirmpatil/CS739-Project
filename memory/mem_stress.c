@@ -6,7 +6,11 @@
 
 int main(int argc, char *argv[])
 {
-	long long unsigned int to_allocate = (long long unsigned int)102*1024*1024*1024;
+  if(argc != 2){
+    printf("\nUsage: <executable> <sizeingb>\n");
+  }
+  int sizeingb = atoi(argv[1]);
+	long long unsigned int to_allocate = (long long unsigned int)sizeingb*1024*1024*1024;
 	char *ptr = (char *)malloc(to_allocate*sizeof(char));
 	if (ptr == NULL)
 	{
