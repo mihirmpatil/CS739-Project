@@ -30,7 +30,7 @@ sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
 memory() {
 cd memory
 gcc contmemtest.c -pthread -o contmemtest
-./contmemtest 1 0 4096 64 1 1 > contmemtest.out
+./contmemtest 1 0 4096 64 1 1 > contmemtest.2c.4GB.out
 }
 
 echo "Start: " $(date +%s)
