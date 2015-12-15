@@ -28,9 +28,9 @@ sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
 
 
 memory() {
-cd memory
-gcc contmemtest.c -pthread -o contmemtest
-./contmemtest 1 1024 4096 1024 1 1 > contmemtest.2c.4GB.out
+#cd memory
+gcc CS739-Project/memory/contmemtest.c -pthread -o CS739-Project/memory/contmemtest
+CS739-Project/memory/contmemtest 1 1024 4096 1024 1 1 > CS739-Project/memory/contmemtest.2c.4GB.out
 }
 
 echo "Start: " $(date +%s)
