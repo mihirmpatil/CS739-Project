@@ -12,8 +12,8 @@ killcommand = 'python kill_containers.py all'
 
 while (cnt <= 2):
     output = subprocess.check_output("ps -all", shell=True)
-    output_list = output.strip().split('\n')
-    processes = len(output)
+    output_list = output.decode('utf-8').strip().split('\n')
+    processes = len(output_list)
 
     if (processes == 281):
         #Run the containers
