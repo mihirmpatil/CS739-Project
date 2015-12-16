@@ -21,9 +21,9 @@ disk() {
 cd disk
 make
 
-./seq_write file.1GB 262144 > seq_write_1GB.out
+#./seq_write file.1GB 262144 > seq_write_1GB.out
 sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
-./seq_read file.1GB > seq_read_1GB.out
+#./seq_read file.1GB > seq_read_1GB.out
 }
 
 
@@ -40,5 +40,5 @@ gcc /root/CS739-Project-master/cpu/borwein_pi.c -pthread -o /root/CS739-Project-
 }
 
 echo "Start: " $(date +%s)
-#disk
+disk
 echo "End: " $(date +%s)
