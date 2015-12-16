@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	char buffer[BUFFER_SIZE];
 	long int total_read=0, num_read=0, times=0;
 
-	int i, iterations = 10;
+	int i, iterations = 5;
 
 	for(i=0; i<iterations; i++)
 	{

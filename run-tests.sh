@@ -18,8 +18,10 @@ unzip master.zip
 #cd CS739-Project-master
 
 disk() {
-cd disk
+cd /root/CS739-Project-master/disk
+make clean
 make
+cd /
 
 #./seq_write file.1GB 262144 > seq_write_1GB.out
 sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
