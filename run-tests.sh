@@ -35,8 +35,8 @@ CS739-Project/memory/contmemtest 1 1024 4096 1024 1 1 > CS739-Project/memory/con
 
 cpu() {
 #cd memory
-gcc CS739-Project/cpu/borwein_pi.c -pthread -o CS739-Project/memory/borwein
-CS739-Project/memory/borwein 100000000 6 > CS739-Project/cpu/cputest.100000000digit.out
+gcc /root/CS739-Project-master/cpu/borwein_pi.c -pthread -o /root/CS739-Project-master/cpu/borwein
+/root/CS739-Project-master/cpu/borwein 100000000 6 > /root/CS739-Project-master/cpu/cputest.100000000digit.out
 }
 
 echo "Start: " $(date +%s)
