@@ -33,6 +33,12 @@ gcc CS739-Project/memory/contmemtest.c -pthread -o CS739-Project/memory/contmemt
 CS739-Project/memory/contmemtest 1 1024 4096 1024 1 1 > CS739-Project/memory/contmemtest.2c.4GB.out
 }
 
+cpu() {
+#cd memory
+gcc CS739-Project/cpu/borwein_pi.c -pthread -o CS739-Project/memory/borwein
+CS739-Project/memory/borwein 100000000 6 > CS739-Project/cpu/cputest.100000000digit.out
+}
+
 echo "Start: " $(date +%s)
-memory
+cpu
 echo "End: " $(date +%s)

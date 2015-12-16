@@ -13,17 +13,21 @@ ips[8]="192.168.122.140"
 ips[9]="192.168.122.7"
 
 sshprefix="(sshpass -p mihir ssh mihir@"
-testcmd=" CS739-Project/memory/contmemtest 1 1024 4096 1024 1 1) > "
-compilecmd=" gcc CS739-Project/memory/contmemtest.c -o CS739-Project/memory/contmemtest -pthread)"
+testcmd=" CS739-Project/cpu/borwein 100000000 6) > "
+compilecmd=" gcc CS739-Project/cpu/borwein_pi.c -o CS739-Project/cpu/borwein -pthread)"
 sloc=" ~/mnt/vm_tests/"
-fname="/contmemtest.1-4GB."
+fname="/cputest.1-4GB."
 runbg=" &"
 
 echo "Started compiling binaries"
-#Compile the binaries
+#Update git and compile the binaries
 for (( c=0; c<$1; c++))
 do
     currip=${ips[$c]}
+    #update git
+    gitcmd=" \"cd CS739-Project && git pull\")"
+    ucmd=$sshprefix$currip$gitcmd
+    eval $ucmd
     cmd=$sshprefix$currip$compilecmd
     eval $cmd
 done
