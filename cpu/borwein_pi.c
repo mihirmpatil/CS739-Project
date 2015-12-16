@@ -36,7 +36,7 @@ void* calculatePi(void *args){
   struct timespec start, end;
   
   tid = ((targs*)(args))->tid;
-  printf("Starting thread: %d\n",tid);
+  //printf("Starting thread: %d\n",tid);
 
   clock_gettime(CLOCK_MONOTONIC, &start);
   for(k=0; k<=precision; k++){
@@ -44,9 +44,9 @@ void* calculatePi(void *args){
     p16 *= 16;
   }
   clock_gettime(CLOCK_MONOTONIC,&end);
-  printf("Pi calculation elapsed time = %llu nanoseconds\n", (long long unsigned int) getTimeDiff(start,end));
+  printf("Pi_calculation_elapsed_time:\t%llu\n", (long long unsigned int) getTimeDiff(start,end));
 
-  printf("Ending thread: %d\n",tid);
+  //printf("Ending thread: %d\n",tid);
 
   return NULL;
 }
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]){
 	int threads = atoi(argv[2]);
 	int i;
 
-	printf("Calculating Pi with precision: %d, threads: %d\n",precision,threads);
+	//printf("Calculating Pi with precision: %d, threads: %d\n",precision,threads);
 
 	pthread_t pthreads[MAX_THREADS];
 	targs threadarguments[MAX_THREADS];

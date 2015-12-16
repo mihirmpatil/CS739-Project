@@ -14,9 +14,22 @@ ips[9]="192.168.122.7"
 
 sshprefix="(sshpass -p mihir ssh mihir@"
 testcmd=" CS739-Project/memory/contmemtest 1 1024 4096 1024 1 1) > "
+compilecmd=" gcc CS739-Project/memory/contmemtest.c -o CS739-Project/memory/contmemtest -pthread)"
 sloc=" ~/mnt/vm_tests/"
 fname="/contmemtest.1-4GB."
 runbg=" &"
+
+echo "Started compiling binaries"
+#Compile the binaries
+for (( c=0; c<$1; c++))
+do
+    currip=${ips[$c]}
+    cmd=$sshprefix$currip$compilecmd
+    eval $cmd
+done
+echo "Finished compiling binaries"
+
+echo "Starting tests"
 for (( c=0; c<$1; c++))
 do
     currip=${ips[$c]}
