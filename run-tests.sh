@@ -40,5 +40,5 @@ gcc /root/CS739-Project-master/cpu/borwein_pi.c -pthread -o /root/CS739-Project-
 }
 
 echo "Start: " $(date +%s)
-cpu
+memory
 echo "End: " $(date +%s)
