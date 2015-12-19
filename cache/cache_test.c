@@ -36,8 +36,6 @@ void* allocAndRead(void *args){
   int i,j,temp;
   uint64_t diff;
   struct timespec start, end;
-  
-  //printf("AllocAndRead Starting thread: %d\n",((targs*)(args))->tid);
 
   mem = (char*)malloc(totalsize*sizeof(char));
 
@@ -45,19 +43,20 @@ void* allocAndRead(void *args){
   for(i=0;i<totalsize;i++){
     mem[i]=rand()%26;
   }
-  
+  // Read once to populate the cache
+  for(j=0;j<totalsize;j++){
+    temp = mem[j];
+  }
+
   // Read for the specified number of times
   clock_gettime(CLOCK_MONOTONIC, &start);
   for(i=0;i<runs;i++){
     for(j=0;j<totalsize;j++){
-      temp = (temp+mem[j])%26;
+      temp = mem[j];
     }
   }
   clock_gettime(CLOCK_MONOTONIC,&end);
-  printf("%d\t%llu\n", chunksize, (long long unsigned int) getTimeDiff(start,end));
-  
-  //printf("Printing to avoid compiler optimization: %d\n",temp);
-  //printf("Ending thread: %d\n",((targs*)(args))->tid);
+  printf("Read_chunksize_runs_time\t%d\t%d\t%llu\n", chunksize, runs, (long long unsigned int) getTimeDiff(start,end));
 
   free(mem);
   return NULL;

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+rm b91cb90cc2b4_seq_write_1GB.out
+rm acf17fdaa43a_seq_write_1GB.out
+rm 9627472dedb6_seq_write_1GB.out
+rm 9567d733f500_seq_write_1GB.out
+rm 8e0642b65f7d_seq_write_1GB.out
+rm 829dfa82b7ab_seq_write_1GB.out
+rm 6a1e3a371328_seq_write_1GB.out
+rm 3cdb67cd480a_seq_write_1GB.out
+rm 3ab33c761975_seq_write_1GB.out
+rm 10dfd53bf11a_seq_write_1GB.out
+rm b91cb90cc2b4_seq_read_1GB.out
+rm acf17fdaa43a_seq_read_1GB.out
+rm 9627472dedb6_seq_read_1GB.out
+rm 9567d733f500_seq_read_1GB.out
+rm 8e0642b65f7d_seq_read_1GB.out
+rm 829dfa82b7ab_seq_read_1GB.out
+rm 6a1e3a371328_seq_read_1GB.out
+rm 3cdb67cd480a_seq_read_1GB.out
+rm 3ab33c761975_seq_read_1GB.out
+rm 10dfd53bf11a_seq_read_1GB.out

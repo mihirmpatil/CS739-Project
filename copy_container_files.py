@@ -5,7 +5,9 @@ import subprocess
 
 
 #file_path = "/root/CS739-Project-master/disk/"
-file_path = "/root/CS739-Project-master/memory/"
+#file_path = "/root/CS739-Project-master/memory/"
+#file_path = "/root/CS739-Project-master/cpu/"
+file_path = "/"
 
 def get_running_containers():
 	list_cmd = "sudo docker ps -q"
@@ -30,10 +32,8 @@ if os.path.isdir(dest_dir) is False:
 	os.makedirs(dest_dir)
 
 
-#file_names_list = [ "seq_write_1GB.out",
-#										"seq_read_1GB.out"
-#									]
-file_names_list = [ "cputest.100000000digit.out" ]
+file_names_list = [ "seq_write_1GB.out","seq_read_1GB.out"]
+#file_names_list = [ "cputest.100000000digit.out" ]
 
 running = get_running_containers()
 for item in running:
